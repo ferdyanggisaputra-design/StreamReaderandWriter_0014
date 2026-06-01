@@ -164,3 +164,51 @@ void jalankanSimulasiEtalase(TokoElektronik& toko) {
     cout << "================================\n" << endl;
 }
 
+// MAIN FUNCTION (MENU UTAMA INTERAKTIF)
+int main() {
+    TokoElektronik tokoGibranJaya;
+    int pilihanMenu;
+
+    do {
+        // Otomatis membaca dan menampilkan daftar barang dari file teks setiap kali menu dibuka
+        tampilkanGudang();
+
+        cout << "\n=== SISTEM MANAJEMEN TOKO ELEKTRONIK \"GIBRAN JAYA\" ===" << endl;
+        cout << "1. Tambah Barang ke Gudang (Create)" << endl;
+        cout << "2. Ubah Barang di Gudang (Update)" << endl;
+        cout << "3. Hapus Barang dari Gudang (Delete)" << endl;
+        cout << "4. Jalankan Simulasi Etalase (Exception Handling)" << endl;
+        cout << "5. Keluar Aplikasi" << endl;
+        cout << "Pilih menu (1-5): ";
+        cin >> pilihanMenu;
+
+        switch (pilihanMenu) {
+            case 1:
+                tambahBarang();
+                break;
+            case 2:
+                updateBarang();
+                break;
+            case 3:
+                hapusBarang();
+                break;
+            case 4:
+                jalankanSimulasiEtalase(tokoGibranJaya);
+                break;
+            case 5:
+                cout << "\nTerima kasih telah menggunakan sistem manajemen Gibran Jaya!" << endl;
+                break;
+            default:
+                cout << "\nPilihan tidak valid! Silakan masukkan angka 1-5." << endl;
+        }
+        
+        if (pilihanMenu != 5) {
+            cout << "\nTekan Enter untuk kembali ke menu utama...";
+            cin.ignore();
+            cin.get();
+        }
+
+    } while (pilihanMenu != 5);
+
+    return 0;
+}
