@@ -36,3 +36,20 @@ public:
 // 3. FITUR MANAJEMEN GUDANG BERBASIS FILE (CRUD & FILE I/O)
 const string NAMA_FILE = "gudang.txt";
 
+// Fungsi Helper untuk membaca semua barang dari file ke dalam vector
+vector<string> bacaSemuaBarang() {
+    vector<string> daftarBarang;
+    ifstream fileInput(NAMA_FILE);
+    string barang;
+    
+    if (fileInput.is_open()) {
+        while (getline(fileInput, barang)) {
+            if (!barang.empty()) {
+                daftarBarang.push_back(barang);
+            }
+        }
+        fileInput.close();
+    }
+    return daftarBarang;
+}
+
