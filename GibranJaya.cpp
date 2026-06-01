@@ -64,3 +64,17 @@ void tulisSemuaBarang(const vector<string>& daftarBarang) {
     }
 }
 
+// [R] READ: Membaca dan menampilkan daftar barang secara otomatis
+void tampilkanGudang() {
+    vector<string> daftarBarang = bacaSemuaBarang();
+    cout << "\n=== DAFTAR BARANG DI GUDANG (FILE I/O) ===" << endl;
+    if (daftarBarang.empty()) {
+        cout << "[Gudang Kosong / File Belum Dibuat]" << endl;
+    } else {
+        for (size_t i = 0; i < daftarBarang.size(); ++i) {
+            cout << i + 1 << ". " << daftarBarang[i] << endl;
+        }
+    }
+    cout << "==========================================" << endl;
+}
+
