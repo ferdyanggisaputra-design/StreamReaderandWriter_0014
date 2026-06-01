@@ -53,3 +53,14 @@ vector<string> bacaSemuaBarang() {
     return daftarBarang;
 }
 
+// Fungsi Helper untuk menulis ulang vector barang kembali ke file
+void tulisSemuaBarang(const vector<string>& daftarBarang) {
+    ofstream fileOutput(NAMA_FILE, ios::out | ios::trunc);
+    if (fileOutput.is_open()) {
+        for (const auto& barang : daftarBarang) {
+            fileOutput << barang << endl;
+        }
+        fileOutput.close();
+    }
+}
+
