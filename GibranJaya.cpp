@@ -78,3 +78,20 @@ void tampilkanGudang() {
     cout << "==========================================" << endl;
 }
 
+// [C] CREATE: Menambahkan data barang baru ke dalam file .txt
+void tambahBarang() {
+    string barangBaru;
+    cout << "\nMasukkan nama barang baru: ";
+    cin.ignore();
+    getline(cin, barangBaru);
+
+    ofstream fileOutput(NAMA_FILE, ios::app); // Mode append (menambah di akhir)
+    if (fileOutput.is_open()) {
+        fileOutput << barangBaru << endl;
+        fileOutput.close();
+        cout << "Sukses: Barang \"" << barangBaru << "\" berhasil ditambahkan ke gudang!" << endl;
+    } else {
+        cout << "Error: Gagal membuka file gudang!" << endl;
+    }
+}
+
