@@ -42,3 +42,5 @@ int main()
     //menunjuk ke sebuah file dengan ekstensi .txt
     infile.open(NamaFile + ".txt", ios::in);
 
+    cout << endl << ">= Membuka dan membaca file" << endl;
+    //kondisi jika file ada
