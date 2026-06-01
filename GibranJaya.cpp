@@ -95,3 +95,27 @@ void tambahBarang() {
     }
 }
 
+// [U] UPDATE: Memperbarui/mengubah data barang tertentu di dalam file
+void updateBarang() {
+    tampilkanGudang();
+    vector<string> daftarBarang = bacaSemuaBarang();
+    if (daftarBarang.empty()) return;
+
+    size_t nomor;
+    cout << "Pilih nomor barang yang ingin diubah: ";
+    cin >> nomor;
+
+    if (nomor > 0 && nomor <= daftarBarang.size()) {
+        string barangBaru;
+        cout << "Masukkan nama baru untuk \"" << daftarBarang[nomor - 1] << "\": ";
+        cin.ignore();
+        getline(cin, barangBaru);
+
+        daftarBarang[nomor - 1] = barangBaru;
+        tulisSemuaBarang(daftarBarang);
+        cout << "Sukses: Data barang berhasil diperbarui!" << endl;
+    } else {
+        cout << "Pilihan tidak valid!" << endl;
+    }
+}
+
