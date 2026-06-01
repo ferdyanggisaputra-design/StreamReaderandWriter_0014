@@ -152,3 +152,15 @@ void jalankanSimulasiEtalase(TokoElektronik& toko) {
         cout << "Hasil Skenario 1 (Gagal): " << e.what() << endl;
     }
 
+    // Skenario 2: Pengambilan barang di rak indeks ke-5 (Harus gagal)
+    cout << "\n[Skenario 2] Mencoba mengambil barang di rak indeks 5..." << endl;
+    try {
+        string barang = toko.ambilProdukDariEtalase(5);
+        cout << "Hasil Skenario 2 (Sukses): Mengambil -> " << barang << endl;
+    }
+    catch (const runtime_error& e) {
+        cout << "Hasil Skenario 2 (Tertangkap): " << e.what() << endl;
+    }
+    cout << "================================\n" << endl;
+}
+
