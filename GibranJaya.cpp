@@ -138,3 +138,7 @@ void hapusBarang() {
     }
 }
 
+// 4. SIMULASI ETALASE (PENGUJIAN EXCEPTION HANDLING)
+void jalankanSimulasiEtalase(TokoElektronik& toko) {
+    cout << "\n=== MEMULAI SIMULASI ETALASE ===" << endl;
+
