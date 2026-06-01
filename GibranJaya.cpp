@@ -27,4 +27,9 @@ public:
             return etalase.at(nomorRak);
         }
         catch (const out_of_range& e) {
-            
+            // 2. MEKANISME EXCEPTION HANDLING (Melemparkan pesan error kustom)
+            throw runtime_error("Gagal Mengambil Barang : Rak nomor [" + to_string(nomorRak) + "] kosong atau tidak tersedia!");
+        }
+    }
+};
+
