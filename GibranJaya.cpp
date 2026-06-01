@@ -20,3 +20,11 @@ public:
         etalase[2] = "Smart TV LG 43 Inch";
     }
 
+    // Method Public untuk mengambil produk berdasarkan nomorRak dengan Exception Handling
+    string ambilProdukDariEtalase(size_t nomorRak) {
+        try {
+            // Menggunakan .at() untuk memicu out_of_range jika indeks tidak valid
+            return etalase.at(nomorRak);
+        }
+        catch (const out_of_range& e) {
+            
