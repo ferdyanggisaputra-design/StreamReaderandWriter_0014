@@ -119,3 +119,22 @@ void updateBarang() {
     }
 }
 
+// [D] DELETE: Menghapus data barang dari dalam file .txt
+void hapusBarang() {
+    tampilkanGudang();
+    vector<string> daftarBarang = bacaSemuaBarang();
+    if (daftarBarang.empty()) return;
+
+    size_t nomor;
+    cout << "Pilih nomor barang yang ingin dihapus: ";
+    cin >> nomor;
+
+    if (nomor > 0 && nomor <= daftarBarang.size()) {
+        cout << "Sukses: Barang \"" << daftarBarang[nomor - 1] << "\" berhasil dihapus!" << endl;
+        daftarBarang.erase(daftarBarang.begin() + (nomor - 1));
+        tulisSemuaBarang(daftarBarang);
+    } else {
+        cout << "Pilihan tidak valid!" << endl;
+    }
+}
+
