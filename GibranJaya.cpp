@@ -33,3 +33,6 @@ public:
     }
 };
 
+// 3. FITUR MANAJEMEN GUDANG BERBASIS FILE (CRUD & FILE I/O)
+const string NAMA_FILE = "gudang.txt";
+
